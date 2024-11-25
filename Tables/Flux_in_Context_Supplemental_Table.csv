@@ -1,0 +1,13 @@
+Cruise,Experiment,Compound,Average Particulate Concentration (nM),Standard Deviation of Particulate Concentration (nM),Daily Flux as Percentage of Dissolved Pool (%),Daily Flux as Percentage of Dissolved Pool Error (%),Daily Flux as Percentage of Particulate Pool (%),Daily Flux as Percentage of Particulate Pool Error (%),Estimated Primary Production (uM C day^-1),Daily Flux as Percentage of Primary Production (%),Daily Flux as Percentage of Primary Production Error (%)
+KM1906,UKG1,GBT,0.461,0.045,10.9,3.5, 164, 55, 675,0.56,0.18
+RC078,UKG1,GBT, 8.9,1.6,  73, 31, 459,200,16700,1.22,0.47
+RC104,UKG1,GBT,0.775,0.095,16.6,7.5, 224,100,16700,0.0521,0.023
+TN412,UKG,GBT,0.319,0.049, 112, 65, 166, 84,1110,0.238,0.12
+RC078,UKH1,Homarine,1.13,0.13,4.01,1.9,47.4, 21,16700,0.0225,0.0098
+RC078,UKH2,Homarine,2.41,0.23,2.32,0.86,11.9,4.6,16700,0.012,0.0045
+RC104,UKH1,Homarine,0.41,0.077,3.82,1.9,38.2, 15,16700,0.00657,0.0023
+TN397,UKH1,Homarine,0.0135,0.0028, 4.7,2.9,20.9, 10, 398,0.00496,0.0022
+TN397,UKH2,Homarine,0.029,0.011,3.57,2.2,  23, 14, 456,0.0102,0.0049
+TN397,UKH3,Homarine,0.209,0.016,1.76,1.1,3.26,1.8,1630,0.00292,0.0016
+TN397,UKH4,Homarine,0.293,0.035,2.02,0.4,6.13,1.3,1870,0.00673,0.0012
+TN397,UKH5,Homarine,0.258,0.021,6.19,1.9, 7.2,2.2,1320,0.00986,0.0029
