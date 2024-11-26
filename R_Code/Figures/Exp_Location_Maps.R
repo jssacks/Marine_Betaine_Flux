@@ -40,6 +40,8 @@ big.map <- ggplot(data = world) +
   aes(x = Long, y = Lat, fill = Region, shape = Compound), 
   alpha = 0.8, 
   size = 5) +
+  scale_y_continuous(labels = scales::label_number(accuracy = 0.1)) +
+  scale_x_continuous(labels = scales::label_number(accuracy = 0.01)) +
   scale_shape_manual(values = c(21, 22)) +
  # scale_fill_manual(values = region.pal) +
   scale_fill_npg() +
