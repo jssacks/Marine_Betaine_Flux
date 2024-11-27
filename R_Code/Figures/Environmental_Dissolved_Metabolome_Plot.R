@@ -44,7 +44,8 @@ plot.a <- ggplot(env.dat.ord, aes(x = reorder(Cruise_Exp, -Mean.Diss.Conc.nM), y
   facet_grid(.~exp.comp, scales = "free_x", space = "free_x") +
   theme_test() +
   xlab("Experiment") +
-  ylab("Dissolved Concentration (nM)") +
+  ylab(expression("Dissolved Concentration"~(nmol~L^-1))) +
+ # ylab("Dissolved Concentration (nM)") +
   labs(fill = "Compound") +
   theme(axis.text.x = element_text(angle = 45, vjust = 0.8, hjust = 0.8)) +
   scale_y_continuous(expand = c(0, NA, NA, 1000), limits = c(0,160)) 

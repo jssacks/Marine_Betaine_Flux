@@ -94,7 +94,7 @@ kin.plot.A <- ggplot(k.d.a, aes(x = treatment_nM, y = nM_per_hour_noS, color = R
  # scale_color_manual(values = region.pal) +
   theme_test() +
   facet_grid(.~Compound) +
-  ylab(expression(Uptake~Rate~(nmol~L^-1~hr^-1))) +
+  ylab(expression(Uptake~Rate~(nmol~L^-1~h^-1))) +
   xlab("Spike Concentration (nM)") +
   theme(#strip.background.x = element_blank(),
     strip.text.x = element_text(face = "bold")
@@ -118,7 +118,7 @@ kin.plot.B  <- ggplot(k.d.b, aes(x = treatment_nM, y = nM_per_hour_noS)) +
   theme_test() +
   theme(axis.title = element_blank()) +
   #  facet_grid(.~Compound) +
-  ylab(expression(Uptake~Rate~(nmol~L^-1~hr^-1))) +
+  ylab(expression(Uptake~Rate~(nmol~L^-1~h^-1))) +
   xlab("Spike Concentration (nM)") +
   theme(panel.background = element_rect(fill='transparent'), #transparent panel bg
         plot.background = element_rect(fill='transparent', color=NA)) +
@@ -153,7 +153,7 @@ comp.plot <- ggplot(dat.fig, aes(x = treatment, y = nM.per.hour.1)) +
   theme_test() +
   facet_grid(.~cruise, scales = "free_x", space = "free") +
   xlab("Treatment") +
-  ylab("Uptake Rate (nM/hr)") +
+  ylab(expression("Uptake Rate"~(nmol~L^-1~h^-1))) +
   labs(fill = "") + 
   theme(legend.position = "bottom",
         axis.text.x = element_text(angle = 30, vjust = 0.7)) + 

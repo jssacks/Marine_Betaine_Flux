@@ -42,8 +42,8 @@ plot.lin <- ggplot(dat.blk, aes(x = treatment, y = nM_in_vial)) +
   geom_smooth(method = "lm", color = "black", alpha = 0.3) +
   geom_point(shape = 21, size = 3, stroke = 0.2, aes(fill = cruise)) +
   facet_wrap(.~Compound, scales = "free") +
-  xlab("Treatment Concentration (nM)") +
-  ylab("Concentration in Vial (nM)") +
+  xlab(expression("Treatment Concentration"~(nmol~L^-1))) +
+  ylab(expression("Concentration in Vial"~(nmol~L^-1))) +
   theme_bw()
 plot.lin
 
@@ -54,8 +54,8 @@ plot.log <- ggplot(dat.blk, aes(x = treatment, y = nM_in_vial)) +
   facet_wrap(.~Compound, scales = "free") +
   scale_y_log10() +
   scale_x_log10() +
-  xlab("Treatment Concentration (nM)") +
-  ylab("Concentration in Vial (nM)") +
+  xlab(expression("Treatment Concentration"~(nmol~L^-1))) +
+  ylab(expression("Concentration in Vial"~(nmol~L^-1))) +
   theme_bw()
 plot.log
 

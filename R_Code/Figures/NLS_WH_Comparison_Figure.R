@@ -75,8 +75,8 @@ ktsn.plot <- ggplot(nls.wh.dat, aes(x = wh.ktsn, y = nls.ktsn)) +
   theme_test()  +
   guides(fill = guide_legend(override.aes = list(shape = 21)),
          shape = guide_legend(override.aes = list(fill = "black"))) +
-  ylab(expression(NLS~K[t]+S[n]~(nM))) +
-  xlab(expression(WH~K[t]+S[n]~(nM))) +
+  ylab(expression(NLS~K[t]+S[n]~(nmol~L^-1))) +
+  xlab(expression(WH~K[t]+S[n]~(nmol~L^-1))) +
   annotate("text", x = 80, y = 500, 
            label = "p < 0.0001",
            size = 4) +

@@ -86,7 +86,7 @@ all.exp.plot <- ggplot(exp.dat.tidy, aes(x = treatment_conc, y = nM.per.hour.1))
 #  scale_color_manual(values = region.pal) +
   theme(legend.position = "bottom") +
   xlab("Spike Concentration (nM)") +
-  ylab(expression(Uptake~Rate~(nmol~L^-1~day^-1)))
+  ylab(expression(Uptake~Rate~(nmol~L^-1~h^-1)))
 all.exp.plot
 
 

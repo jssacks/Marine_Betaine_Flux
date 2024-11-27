@@ -66,11 +66,12 @@ p.plot <- ggplot(all.dat, aes(x = KinExp_ID, y = mean.part.conc.nM, fill = Regio
   scale_y_log10() +
   theme_bw() +
   xlab("Experiment") +
-  ylab("Particulate Concentration (nM)") +
+  ylab(expression("Particulate Concentration"~(nmol~L^-1))) +
+#  ylab("Particulate Concentration (nM)") +
   theme(axis.text.x = element_text(angle = 45, vjust = 0.8, hjust = 0.8),
         #  strip.background.x = element_blank(),
         strip.text.x = element_text(face = "bold")) 
 p.plot
 
-ggsave(p.plot, filename = "Figures/Flux_Paper_Figures/Particulate_Metabolite_Concentration_Plot.png",
+ggsave(p.plot, filename = "Figures/Particulate_Metabolite_Concentration_Plot.png",
        dpi = 600, units = "in", height = 3.5, width = 5, scale = 1.2)

@@ -88,8 +88,8 @@ plot.a <- ggplot(all.dat.hom, aes(x = Mean.Diss.Conc.nM, y = mean_ks)) +
   theme_test()  +
   guides(fill = guide_legend(override.aes = list(shape = 21)),
          shape = guide_legend(override.aes = list(fill = "black"))) +
-  xlab("Dissolved Homarine Concentration (nM)") +
-  ylab(expression(K[t]~(nM))) +
+  xlab(expression("Dissolved Homarine Concentration"~(nmol~L^-1))) +
+  ylab(expression(K[t]~(nmol~L^-1))) +
   annotate("text", x = 0.15, y = 5, 
            label = "p = 0.20",
            size = 4)  +
@@ -120,8 +120,8 @@ plot.b <- ggplot(all.dat.gbt, aes(x = Mean.Diss.Conc.nM, y = mean_ks)) +
   theme_test()  +
   guides(fill = guide_legend(override.aes = list(shape = 21)),
          shape = guide_legend(override.aes = list(fill = "black"))) +
-  xlab("Dissolved GBT Concentration (nM)") +
-  ylab(expression(K[t]~(nM))) +
+  xlab(expression("Dissolved GBT Concentration"~(nmol~L^-1))) +
+  ylab(expression(K[t]~(nmol~L^-1))) +
   annotate("text", x = 1.1, y = 400, 
            label = "p = 0.12",
            size = 4)  +
@@ -181,7 +181,8 @@ plot.d <- ggplot(all.dat, aes(x = mean.part.conc.nM, y = mm_flux_nM_day)) +
   theme_test()  +
   guides(fill = guide_legend(override.aes = list(shape = 21)),
          shape = guide_legend(override.aes = list(fill = "black"))) +
-  xlab("Particulate GBT or Homarine Concentration (nM)") +
+  #xlab("Particulate GBT or Homarine Concentration (nM)") +
+  xlab(expression("Particulate GBT or Homarine Concentration"~(nmol~L^-1))) +
   ylab(expression(Flux~(nmol~L^-1~day^-1))) +
   annotate("text", x = 0.05, y = 20, 
            label = "p = 0.0003",
