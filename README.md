@@ -5,12 +5,13 @@ The cycling of glycine betaine and homarine in marine microbial communities: qua
 
 A repository for the data and code for Sacks et al. (in prep). Written in R. 
 
+___
 
 ## Dependencies:
 
 In Progress
 
-
+___ 
 # Repo structure:
 
 # Data: 
@@ -18,89 +19,87 @@ In Progress
 ## Raw_Data:
 
 ### Kinetics_Data:
-This folder contains the skyline output .csv files of integrated peaks of targeted liquid chromatography-mass spectrometry data from the uptake kinetics and uptake competition experiments as well as the in situ particulate metabolite measurements of homarine and glycine betaine.
+* This folder contains the skyline output .csv files of integrated peaks of targeted liquid chromatography-mass spectrometry data from the uptake kinetics and uptake competition experiments as well as the in situ particulate metabolite measurements of homarine and glycine betaine.
 
 ### Distribution_Data:
-This folder contains the skyline output .csv files of integrated peaks of liquid chromatography-mass spectrometry data from the dissolved samples processed using cation-exchange solid phase extraction.
+* This folder contains the skyline output .csv files of integrated peaks of liquid chromatography-mass spectrometry data from the dissolved samples processed using cation-exchange solid phase extraction.
 
 
 ## Meta_Data:
 
 ### Data_From_Other_Studies:
-This folder contains uptake rate experimental data from Boysen et al. 2022, 14C incubation primary production estimates for Puget Sound from Newton and VanVoorhis 2002, and a compilation of uptake competition studies from the literature on glycine betaine, DMSP, and choline. 
+* This folder contains uptake rate experimental data from Boysen et al. 2022, 14C incubation primary production estimates for Puget Sound from Newton and VanVoorhis 2002, and a compilation of uptake competition studies from the literature on glycine betaine, DMSP, and choline. 
 
 ### Enviro_Meta_Data:
-This folder contains environmental data (particulate carbon, chlorophyll a, temperature, salinity, nutrients, etc.) collected by collaborators or our lab from the research cruises KM1906, TN397, TN412, RC078, and RC104. Most data are also available on Simons CMAP.
+* This folder contains environmental data (particulate carbon, chlorophyll a, temperature, salinity, nutrients, etc.) collected by collaborators or our lab from the research cruises KM1906, TN397, TN412, RC078, and RC104. Most data are also available on Simons CMAP.
 
 ### Ingalls_Lab_Data:
-This folder contains data related to sample collection, sample processing, and metabolite quantification. This includes extraction efficiencies from for the cation-exchange solid phase extraction approach, concentrations of standards, and experiment locations. 
+* This folder contains data related to sample collection, sample processing, and metabolite quantification. This includes extraction efficiencies from for the cation-exchange solid phase extraction approach, concentrations of standards, and experiment locations. 
 
-
-
-
+___
 
 # Data Processing, Analysis, and Visualization:
 
 ## R_Code:
 
-## Folder 1 - Meta_Data_Processing:
+## Folder 1: Meta_Data_Processing
 
 ### Script 1.1: 
 #### G4_EnviroMeetaData_Interpolation.R
-Sources environmental data (PC, nutrients, chl a, etc.) from TN397 folder in Enviro_Meta_Data, collocates all data based on time, interpolates all data using a Steinman interpolation, and exports a finished, collocated interpolated environmental data csv to the Intermediates folder. 
+* Sources environmental data (PC, nutrients, chl a, etc.) from TN397 folder in Enviro_Meta_Data, collocates all data based on time, interpolates all data using a Steinman interpolation, and exports a finished, collocated interpolated environmental data csv to the Intermediates folder. 
 
 ### Script 1.2:
 #### G5_EnviroMetaData_Interpolation.R
-Sources environmental data (PC, nutrients, chl a, etc.) from TN412 folder in Enviro_Meta_Data, collocates all data based on time, interpolates all data using a Steinman interpolation, and exports a finished, collocated interpolated environmental data csv to the Intermediates folder. 
+* Sources environmental data (PC, nutrients, chl a, etc.) from TN412 folder in Enviro_Meta_Data, collocates all data based on time, interpolates all data using a Steinman interpolation, and exports a finished, collocated interpolated environmental data csv to the Intermediates folder. 
 
-### Script 2.2: 
+### Script 1.3: 
 #### RC078_EnviroMetaData_Curation.R
-Organizes and tidies environmental data from RC078 folder in Enviro_Meta_Data, collocates data based on station and depth, and exports a finished, collocated interpolated environmental data csv to the Intermediates folder.
+* Organizes and tidies environmental data from RC078 folder in Enviro_Meta_Data, collocates data based on station and depth, and exports a finished, collocated interpolated environmental data csv to the Intermediates folder.
 
-### Script 2.3:
+### Script 1.4:
 #### Kinetics_Experiment_MetaData_Curation.R
-Sources data on TN397 (G4), TN412 (G5), KM1906 (G3), RC078 (D1), RC104 (D2), and Newton and VanVoorhis 2002 (PS.PP), matches environmental data against kinetics and uptake experiments and standardizes formatting, and exports a single csv to containing all environmental meta data for each experiment to the Intermediates folder. 
+* Sources data on TN397 (G4), TN412 (G5), KM1906 (G3), RC078 (D1), RC104 (D2), and Newton and VanVoorhis 2002 (PS.PP), matches environmental data against kinetics and uptake experiments and standardizes formatting, and exports a single csv to containing all environmental meta data for each experiment to the Intermediates folder. 
+
+--- 
 
 
-
-
-## Folder 2: Dissolved_Metabolomics_Analysis:
+## Folder 2: Dissolved_Metabolomics_Analysis
 
 ### Script 2.1:
 #### DissMetab_Functions.R
-Script containing functions used by other scripts to quantify dissolved metabolomics data.  
+* Script containing functions used by other scripts to quantify dissolved metabolomics data.  
 
 ### Script 2.2: 
 #### Raw_Data_Organization.R
-Sources raw data from Raw_Data/Distribution_Data, tidies, organizes, compiles, and exports as a csv to Intermediates.  
+* Sources raw data from Raw_Data/Distribution_Data, tidies, organizes, compiles, and exports as a csv to Intermediates.  
 
 ### Script 2.3:
 #### Dissolved_BMIS.R
-Sources organized raw data from Intermediates folder, runs best-matched internal standard normalization (BMIS) from Boysen et al. (2018), and exports BMISed data to Intermediates folder. 
+* Sources organized raw data from Intermediates folder, runs best-matched internal standard normalization (BMIS) from Boysen et al. (2018), and exports BMISed data to Intermediates folder. 
 
 ### Script 2.4:
 #### Dissolved_Blk_LOD_Calcs.R
-Sources BMISed data from Intermediates folder, calculates limits of detection (LODs) using laboratory cation-exchange clean blanks (as in Sacks et al. 2022), and exports LODs to Intermediates folder. 
+* Sources BMISed data from Intermediates folder, calculates limits of detection (LODs) using laboratory cation-exchange clean blanks (as in Sacks et al. 2022), and exports LODs to Intermediates folder. 
 
 ### Script 2.5:
 #### Dissolved_QC.R
-Sources organized raw data and LODs from Intermediates folder, runs QC based on changeable thresholds for minimum peak area and LODs, and exports BMISed data to Intermediates folder.
+* Sources organized raw data and LODs from Intermediates folder, runs QC based on changeable thresholds for minimum peak area and LODs, and exports BMISed data to Intermediates folder.
 
 ### Script 2.6:
 #### Dissolved_RF_RFratios.R
-Sources organized raw data from Intermediates folder and Ingalls lab standards data from Meta_Data folder, calculates response factors (RFs) and response factor ratios (RFratios) as in Boysen et al. (2018), and exports RFs and RFratios as a csv to Intermediates folder. 
+* Sources organized raw data from Intermediates folder and Ingalls lab standards data from Meta_Data folder, calculates response factors (RFs) and response factor ratios (RFratios) as in Boysen et al. (2018), and exports RFs and RFratios as a csv to Intermediates folder. 
 
 
 ### Script 2.7:
 #### Dissolved_Quantification.R
-Sources BMISed data, organized raw data, RFs and RFratios, and LODs from Intermediates folder, runs quantification based on RFs and internal standards when applicable, applies an extraction efficiency correction (as in Sacks et al. 2022), and calculates concentrations in samples in nmol/L and nmol C/L and nmol N/L space. 
+* Sources BMISed data, organized raw data, RFs and RFratios, and LODs from Intermediates folder, runs quantification based on RFs and internal standards when applicable, applies an extraction efficiency correction (as in Sacks et al. 2022), and calculates concentrations in samples in nmol/L and nmol C/L and nmol N/L space. 
 
 
 ### Script 2.8:
 #### Final_QC_and_Organization.R
-This script sources quantified data and QCed data, removes data not passing QC, and exports data to a csv in Intermediates. 
+* This script sources quantified data and QCed data, removes data not passing QC, and exports data to a csv in Intermediates. 
 
-
+--- 
 
 ## Folder 3: Kinetics_Flux_Analysis.R 
 
@@ -137,7 +136,7 @@ This script sources quantified data and QCed data, removes data not passing QC, 
 * This script sources kinetics parameters, meta data, and Kt/Sn values from Intermediates and runs statistical tests reported in manuscript. 
 
 
-
+--- 
 
 Folder 4: Tables
 
@@ -165,63 +164,63 @@ ___
 ### Exp_Location_Maps.R
 * This script produces main text Figure 1. 
 
-### Script 2:
+### Script 5.2:
 #### Kinetics_Competition_Experiment_Figure.R
 * This script produces main text Figure 2. 
 
-### Script 3:
+### Script 5.3:
 #### Kin_Flux_Conc_Relationships_Figs.R 
 * This script produces main text Figure 3. 
 
-Script 4:
-Blank_Supplemental_Figure_and_Stats.R
-	This script produces Supplemental Figure 1 and assess the fit of blank data to a linear model. 
+### Script 5.4:
+#### Blank_Supplemental_Figure_and_Stats.R
+* This script produces Supplemental Figure 1 and assess the fit of blank data to a linear model. 
 
-Script 5:
-NLS_WH_Comparison_Figure.R
-	This script produces Supplemental Figure 2. 
+### Script 5.5:
+#### NLS_WH_Comparison_Figure.R
+* This script produces Supplemental Figure 2. 
 
-Script 6:
-Particulate_Concentration_Supplemental_Figure.R
-	This script produces Supplemental Figure 3. 
+### Script 5.6:
+#### Particulate_Concentration_Supplemental_Figure.R
+* This script produces Supplemental Figure 3. 
 
-Script 7:
-Environmental_Dissolved_Metabolome_Plot.R 
-	This script produces Supplemental Figure 4. 
+### Script 5.7:
+#### Environmental_Dissolved_Metabolome_Plot.R 
+* This script produces Supplemental Figure 4. 
 
-Script 8:
-Competition_Network_Lit_Synth_Figure.R 
-	This script produces Supplemental Figure 5.
+### Script 5.8:
+#### Competition_Network_Lit_Synth_Figure.R 
+* This script produces Supplemental Figure 5.
 
-Script 9:
-All_Kin_Exp_Plot.R 
-	This script produces Supplemental Figure 6. 
+### Script 5.9:
+#### All_Kin_Exp_Plot.R 
+* This script produces Supplemental Figure 6. 
 
-Script 10:
-KT_SN_Ratio_PowerLaw.R
-	This script produces Supplemental Figure 7. 
-
-
+### Script 5.10:
+#### KT_SN_Ratio_PowerLaw.R
+* This script produces Supplemental Figure 7. 
 
 
+--- 
 
+## Output Folders:
 
-Outputs:
-
-Intermediates:
+## Intermediates:
 This folder contains all intermediates files used in workflow. 
 
-Tables:
+## Tables:
 This folder contains final tables used in manuscript that are produced by scripts contained in the R_Code/Tables folder. 
 
-Figures:
+## Figures:
 This folder contains final figures used in manuscript that are produced by scripts contained in the R_Code/Figures folder. 
 
+___
+
+## Citation
+
+### TBD
 
 
-Citation
-
-#TBD
 ![image](https://github.com/user-attachments/assets/2c79f061-37e9-46f6-9ac3-b60c05c8f28a)
 
 
