@@ -120,7 +120,7 @@ summary(gbt.kt.dconc.lm)
 
 #organize and compile dissolved data and kt_s_ratio data
 kt_s_ratio.dat <- read_csv(Kt_S_ratio.file) %>%
-  select(Cruise, exp, Compound, kt_s_ratio, kt_s_ratio_error)
+  select(Cruise, exp, Compound, mean_ks, sd_ks, kt_s_ratio, kt_s_ratio_error)
 
 dissolved.metab.dat <- read_csv(enviro.metab.file) %>%
   select(Cruise, exp, Compound, Mean.Diss.Conc.nM, SD.Diss.Conc.nM) %>%
@@ -159,6 +159,24 @@ gbt.kt_s_ratio.test.dat <- kt_s_ratio.test.dat %>%
 
 gbt.ktsratio.lm <- lm(log10.ktsratio ~ log10.perctotpool, data = gbt.kt_s_ratio.test.dat)
 summary(gbt.ktsratio.lm)
+
+
+#Comparison of total pool with Kt
+ggplot(kt_s_ratio.test.dat, aes(x = Tot.Sulf.Bet.Conc.nM, y = mean_ks)) +
+  geom_smooth(method = "lm", alpha = 0.3) +
+  geom_point(size = 2, aes(color = Compound)) +
+  geom_abline(slope = 1, intercept = 0, linetype = "dashed") +
+  scale_y_log10() +
+  scale_x_log10() +
+  theme_test() +
+  xlab("Total Betaine + Sulfonium Pool (nM)") +
+  ylab("Kt (nM)")
+
+
+###Overall model 
+totpool.kt.lm <- lm(log10(mean_ks) ~ log10(Tot.Sulf.Bet.Conc.nM), data = kt_s_ratio.test.dat)
+summary(totpool.kt.lm)
+
 
 
 
